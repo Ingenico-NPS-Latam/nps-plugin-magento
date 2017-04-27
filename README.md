@@ -16,7 +16,7 @@
 
 *Con esto se agrega la Opcion NPS al menu de Magento
 
-4 - Configure your new NPS payment method ==> System ==> Configuration ==>  Payment Methods:
+4. Configure your new NPS payment method ==> System ==> Configuration ==>  Payment Methods:
 Completar con la informacion del Comercio:
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/5.png)
 Enable ==> Yes   ||  No
@@ -31,7 +31,7 @@ Credit Card Types ==> Elegir las Tarjetas con las que se quiere operar
 Payment from Applicable Countries ==> All Allowed Countries  || Specific Countries
 Payment from Specific Countries ==> Elegir los paises en los que se quiere operar
 
-5 - Configure installment settings to allow payments ==> Clicke en NPS del Menu Principal ==> Installments ==> Add Installments 
+5. Configure installment settings to allow payments ==> Clicke en NPS del Menu Principal ==> Installments ==> Add Installments 
 
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/6.png)
 

@@ -3,10 +3,7 @@
 ## Pasos para la instlacion
 1. Clonar el proyecto.
 2. Copiar el contenido del plugin en el raiz de instalacion de Magento  
-![Folder](https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png)  
-![Folder](https://developers.nps.com.ar/images/demo.png)   
-![Folder](https://developers.nps.com.ar/images/devicon/nodejs-original.svg)   
-![Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/1.png)  
+![1](https://cloud.githubusercontent.com/assets/24914148/25488577/c34daeda-2b3d-11e7-8c21-ba08d45ba890.png)
 3. Erase all cache  
   system ==> Cache Management  
 [Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/2.png)  

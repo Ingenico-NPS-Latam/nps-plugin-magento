@@ -41,7 +41,7 @@ Country ==> AR
 Currency ==> ARS  
 [Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/7.png)  
 
-## Consideraciones Finales  
+## Consideraciones Finales
 Si no se realizo durante la instalacion, hay que verificar / Configurar las opciones de Pais y Moneda  
   System ==> Configuration ==> General  
 [Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/8.png)  

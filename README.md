@@ -32,16 +32,13 @@ Payment from Applicable Countries ==> All Allowed Countries  || Specific Countri
 Payment from Specific Countries ==> Elegir los paises en los que se quiere operar  
 
 5. Configure installment settings to allow payments ==> Clicke en NPS del Menu Principal ==> Installments ==> Add Installments  
-
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/6.png)  
-
 cc_type ==> Marca de la Tarjeta  
 qty ==> Cantidad de Cuotas  
 rate ==> Interes  
 Status ==> Enable   ||   Disable  
 Country ==> AR  
 Currency ==> ARS  
-
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/7.png)  
 
 ## Consideraciones Finales  

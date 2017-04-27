@@ -1,6 +1,9 @@
-# nps-plugin-magento
+# Magento Plugin
 
-## Pasos para la instlacion
+## Availability
+Supported and tested in 1.7.x.x to 1.9.x.x Magento versions
+
+## Pasos para la instalacion
 1. Clonar el proyecto.
 2. Copiar el contenido del plugin en el raiz de instalacion de Magento  
 ![1](https://cloud.githubusercontent.com/assets/24914148/25488577/c34daeda-2b3d-11e7-8c21-ba08d45ba890.png)

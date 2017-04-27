@@ -2,7 +2,7 @@
 
 ## Pasos para la instlacion
 1. Clonar el proyecto.
-2. Copiar el contenido del plugin en el raiz de instalacion de Magento
+2. Copiar el contenido del plugin en el raiz de instalacion de Magento  
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/1.png)
 3. Erase all cache
   system ==> Cache Management 

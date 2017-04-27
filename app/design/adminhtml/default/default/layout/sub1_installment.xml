@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sub1_Installment extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Sub1
+ * @package		Sub1_Installment
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+	<!-- Installments grid action -->
+	<adminhtml_installment_installment_index>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>installment/installment</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="installment/adminhtml_installment" name="installment" />
+		</reference>
+	</adminhtml_installment_installment_index>
+	<adminhtml_installment_installment_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="installment/adminhtml_installment_grid" name="installment_grid"/>
+		</block>
+	</adminhtml_installment_installment_grid>
+	<!-- Installment add/edit action -->
+	<adminhtml_installment_installment_edit>
+		<update handle="editor"/>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>installment/installment</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="installment/adminhtml_installment_edit" name="installment_edit"></block>
+		</reference>
+		<reference name="left">
+			<block type="installment/adminhtml_installment_edit_tabs" name="installment_tabs"></block>
+		</reference> 
+	</adminhtml_installment_installment_edit>
+</layout>

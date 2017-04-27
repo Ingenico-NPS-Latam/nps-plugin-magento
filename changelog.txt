@@ -1,0 +1,35 @@
+[2014/09/17]: version 0.3.1
+0002145: Error con Mysql 5.5 
+
+[2014/09/29]: version 0.3.2
+* Se corrigio encoding en el requerimiento a PSP. A configuro para que funcione con UTF-8
+
+[2015/03/06]: version 0.3.5
+* Ahora acepta devoluciones parciales.
+* Ahora pueden configurar el estado para nuevas ordenes como STATE_NEW y STATE_PROCESSING.
+
+[2015/03/17]: version 0.3.6
+* Si existe error al conectarse al Webservice de NPS se pasa la orden a STATE_CANCELED
+
+[2015/03/27]: version 0.3.7
+* 0002472: Mapear campos en transaccion para indicar la version del Shopping Cart y Shopping Cart Plugin 
+
+[2015/05/22]: version 0.3.8
+* 0002591: Magento - Definir el cache_lifetime para el wsdl cache en 43200 segundos (12 horas) 
+
+[2015/05/29]: version 0.3.10
+* 0002596: El producto AMEX se encuentra deshabilitado
+* 0002590: Duplicación SQTX 
+
+[2015/05/29]: version 0.03.011
+* 0002597: Utilizando el botón atrás del browser múltilples veces, se pueden generar varias transacciones para un mismo carrito 
+
+[2015/06/22]: version 0.03.012
+* 0002627: Fatal error: Call to member function getData()
+
+[2015/08/26]: version 0.03.014
+* 0002705: Cliente reporta problema de cuotas con Api Magento 
+* Se modifica el metodo de obtener la IP de comprador
+
+[2015/09/21]: version 0.04.000
+* Se homologa version para Magento 1.9.x.x

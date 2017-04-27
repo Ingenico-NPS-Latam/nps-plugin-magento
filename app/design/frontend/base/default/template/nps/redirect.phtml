@@ -1,0 +1,13 @@
+<div class="page-title">
+  <h1><?php echo $this->__('Redirecting...') ?></h1>
+</div>
+<p><?php echo $this->__('You will be redirected to NPS in a few seconds.') ?></p>
+<form name="npsform" action="<?php echo $this->getData('psp_FrontPSP_URL') ?>" method="POST">
+<input type="hidden" name="psp_Session3p" value="<?php echo $this->getData('psp_Session3p') ?>">
+<input type="hidden" name="psp_TransactionId" value="<?php echo $this->getData('psp_TransactionId') ?>">
+<input type="hidden" name="psp_MerchantId" value="<?php echo $this->getData('psp_MerchantId') ?>">
+<input type="hidden" name="psp_MerchTxRef" value="<?php echo $this->getData('psp_MerchTxRef') ?>">
+</form>
+<script>
+document.npsform.submit();
+</script>

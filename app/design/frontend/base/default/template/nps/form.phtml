@@ -1,0 +1,140 @@
+<?php
+/**
+ *
+ *
+ *
+ * @category    nps
+ * @package     nps
+ * @copyright   Copyright (c) 2012 NPS Inc. (http://www.nps.com.ar)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<style>
+select:disabled {
+    color: grey;
+}
+#image_loading {
+    display: inline;
+    width: 16px;
+    height: 16px;
+}
+</style>
+
+<?php $_code = $this->getMethodCode() ?>
+<?php $_enable_installment = Mage::getModel('nps/nps')->getConfigData('enable_installment') ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <input type="hidden" name="payment[installment]" value="1" />
+    <li id="li_cc">
+        <label for="<?php echo $_code ?>_cc_type" class="required"><em>*</em><?php echo $this->__('Credit Card Type') ?></label>
+        <div class="input-box">
+            <select id="<?php echo $_code ?>_cc_type" name="payment[cc_type]" class="required-entry">
+                <option value=""><?php echo $this->__('--Please Select--') ?></option>
+                <?php if ($_enable_installment): ?>
+                    <?php foreach (Mage::getModel('nps/nps')->getCcAvailableTypesInInstallments() as $_typeCode => $_typeName): ?>
+                        <option value="<?php echo $_typeCode ?>"><?php echo $_typeName ?></option>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <?php foreach ($this->getCcAvailableTypes() as $_typeCode => $_typeName): ?>
+                        <option value="<?php echo $_typeCode ?>"><?php echo $_typeName ?></option>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </select>
+            <?php if ($_enable_installment): ?>
+            <span id="shipping-cc-please-wait" style="display: none;">
+                <img id="image_loading" src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading...') ?>" title="<?php echo $this->__('Loading...') ?>" class="v-middle">
+                <?php echo $this->__('Loading...') ?>
+            </span>
+            <?php endif ?>
+        </div>
+    </li>
+    <?php if ($_enable_installment): ?>
+    <p id="error_message" style="display: none;">
+        <?php echo $this->__('At this moment the selected option is not available. Please try again later.') ?>
+    </p>
+    <li id="li_installment" style="display: none;">
+        <label for="<?php echo $_code ?>_installment" class="required"><em>*</em><?php echo $this->__('Installments') ?></label>
+        <div class="input-box">
+            <select id="<?php echo $_code ?>_installment" name="payment[installment]" class="required-entry">
+                <option value=""><?php echo $this->__('--Please Select--') ?></option>
+            </select>
+        </div>
+    </li>
+    <?php endif ?>
+</ul>
+
+<?php if ($_enable_installment): ?>
+<script>
+    $('<?php echo $_code ?>_cc_type').observe('change', retrieveInstallments);
+    var retry = 0;
+    function retryRequestRetrieveInstallments() {
+        if (retry < 2) {
+            setTimeout(requestRetrieveInstallments, 3000);
+            retry++;
+        } else {
+            $('<?php echo $_code ?>_cc_type').options[0].selected = true;
+            $('<?php echo $_code ?>_cc_type').enable();
+            $('<?php echo $_code ?>_installment').disable();
+            $('<?php echo $_code ?>_installment').update('');
+            $('<?php echo $_code ?>_installment').insert(new Element('option', {value: ''}).update('<?php echo $this->__('--Please Select--') ?>'));
+            $('li_installment').hide();
+            $('shipping-cc-please-wait').hide();
+            $('error_message').show();
+        }
+    }
+    function requestRetrieveInstallments() {
+        new Ajax.Request('<?php echo Mage::getUrl('redirect/redirect/query_installment') ?>', {
+            method: 'post',
+            parameters: {
+                cc_type: $('<?php echo $_code ?>_cc_type').getValue()
+            },
+            onLoading: function () {
+                $('<?php echo $_code ?>_cc_type').disable();
+                $('<?php echo $_code ?>_installment').disable();
+                $('li_installment').show();
+                $('shipping-cc-please-wait').show();
+                $('error_message').hide();
+            },
+            onSuccess: function (transport) {
+                try {
+                    var json = transport.responseText.evalJSON();
+                    if ((json instanceof Array) && (json.length > 0)) {
+                        $('<?php echo $_code ?>_installment').update('');
+                        $('<?php echo $_code ?>_installment').insert(new Element('option', {value: ''}).update('<?php echo $this->__('--Please Select--') ?>'));
+
+                        json.each(function (i, v) {
+                            var desc = i.qty + ' (+' + parseFloat(i.rate, 2).toFixed(2) + '%)';
+                            $('<?php echo $_code ?>_installment').insert(new Element('option', {value: i.qty}).update(desc));
+                        });
+
+                        $('<?php echo $_code ?>_cc_type').enable();
+                        $('<?php echo $_code ?>_installment').enable();
+                        $('shipping-cc-please-wait').hide();
+                    } else {
+                        retryRequestRetrieveInstallments();
+                    }
+                } catch (e) {
+                    retryRequestRetrieveInstallments();
+                }
+            },
+            onFailure: function () {
+                retryRequestRetrieveInstallments();
+            }
+        });
+    }
+    function retrieveInstallments() {
+        if ($('<?php echo $_code ?>_cc_type').getValue()) {
+            retry = 0;
+            requestRetrieveInstallments();
+        } else {
+            $('<?php echo $_code ?>_cc_type').enable();
+            $('<?php echo $_code ?>_installment').disable();
+            $('<?php echo $_code ?>_installment').update('');
+            $('<?php echo $_code ?>_installment').insert(new Element('option', {value: ''}).update('<?php echo $this->__('--Please Select--') ?>'));
+            $('li_installment').hide();
+            $('shipping-cc-please-wait').hide();
+            $('error_message').hide();
+        }
+    }
+</script>
+<?php endif ?>

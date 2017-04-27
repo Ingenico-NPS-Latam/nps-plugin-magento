@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+       <Sub1_Nps>
+          <version>0.04.000</version>
+       </Sub1_Nps>
+    </modules>    
+   <frontend>
+        <routers>
+            <nps>
+                <use>standard</use>
+                <args>
+                    <module>Sub1_Nps</module>
+                    <frontName>redirect</frontName>
+                </args>
+            </nps>            
+        </routers>  
+    </frontend>    
+    <global>
+        <models>
+            <nps>
+                <class>Sub1_Nps_Model</class>
+            </nps>
+        </models>            
+        <helpers>
+            <nps>
+                <class>Sub1_Nps_Helper</class>
+            </nps>
+        </helpers>        
+        <blocks>
+            <nps>
+                <class>Sub1_Nps_Block</class>
+            </nps>
+        </blocks>
+    </global>
+    <default>
+        <payment>
+            <nps>
+                <active>1</active>
+                <model>nps/nps</model>
+                <title>NPS (Net Payment Service)</title>
+            </nps>
+         </payment>
+    </default>
+    
+    
+<adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <sub1>
+                                        <title>Sub1 - All</title>
+                                    </sub1>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>    
+    
+</config>

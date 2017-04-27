@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sub1_Installment extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Sub1
+ * @package		Sub1_Installment
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+	<modules>
+		<Sub1_Installment>
+			<version>0.0.1</version>
+		</Sub1_Installment>
+	</modules>
+	<global>
+                <!--[ACA VAN LOS PRODUCTOS QUE MAGENTO NO TRAE POR DEFECTO]-->
+                <payment>
+                    <cc>
+                        <types>            
+                            <!--TN>
+                                <code>TN</code>
+                                <name>Tarjeta Naranja</name>
+                                <order>0</order>
+                            </TN-->                            
+                            
+                            
+                            <MCB>
+                                <code>MCB</code>	
+                                <name>MC Bancor</name>
+                                <order>0</order>
+                            </MCB>
+                            <TSHOP>
+                                <code>TSHOP</code>	
+                                <name>T Shopping</name>
+                                <order>0</order>
+                            </TSHOP>
+                            <TN>
+                                <code>TN</code>	
+                                <name>Naranja</name>
+                                <order>0</order>
+                            </TN>
+                            <ITAL>
+                                <code>ITAL</code>	
+                                <name>Italcred</name>
+                                <order>0</order>
+                            </ITAL>
+                            <NMO>
+                                <code>NMO</code>	
+                                <name>Naranja MO</name>
+                                <order>0</order>
+                            </NMO>
+                            <ARGE>
+                                <code>ARGE</code>	
+                                <name>Argencard</name>
+                                <order>0</order>
+                            </ARGE>
+                            <!--AE>
+                                <code>AE</code>	
+                                <name>American Express</name>
+                                <order>0</order>
+                            </AE-->
+                            <DI>
+                                <code>DI</code>	
+                                <name>Diners</name>
+                                <order>0</order>
+                            </DI>
+                            <!--MC>
+                                <code>MC</code>	
+                                <name>Mastercard</name>
+                                <order>0</order>
+                            </MC-->
+                            <!--VI>
+                                <code>VI</code>	
+                                <name>Visa</name>
+                                <order>0</order>
+                            </VI-->
+                            <CAB>
+                                <code>CAB</code>	
+                                <name>Cabal</name>
+                                <order>0</order>
+                            </CAB>
+                            <CON>
+                                <code>CON</code>	
+                                <name>Consumax</name>
+                                <order>0</order>
+                            </CON>
+                            <NAT>
+                                <code>NAT</code>	
+                                <name>NATIVA</name>
+                                <order>0</order>
+                            </NAT>
+                            <KAD>
+                                <code>KAD</code>	
+                                <name>Kadicard</name>
+                                <order>0</order>
+                            </KAD>
+                            <NEV>
+                                <code>NEV</code>	
+                                <name>Nevada</name>
+                                <order>0</order>
+                            </NEV>
+                            <VIN>
+                                <code>VIN</code>	
+                                <name>Visa Naranja</name>
+                                <order>0</order>
+                            </VIN>
+                            <NATMC>
+                                <code>NATMC</code>	
+                                <name>Nativa MC</name>
+                                <order>0</order>
+                            </NATMC>
+                            <PYN>
+                                <code>PYN</code>	
+                                <name>Pyme Nacion</name>
+                                <order>0</order>
+                            </PYN>
+                            <DIS>
+                                <code>DIS</code>	
+                                <name>Discover</name>
+                                <order>0</order>
+                            </DIS>
+                            <EL>
+                                <code>EL</code>	
+                                <name>Elo</name>
+                                <order>0</order>
+                            </EL>
+                            <MAG>
+                                <code>MAG</code>	
+                                <name>Magna</name>
+                                <order>0</order>
+                            </MAG>
+                            <AU>
+                                <code>AU</code>	
+                                <name>Aura</name>
+                                <order>0</order>
+                            </AU>
+                            <HIP>
+                                <code>HIP</code>	
+                                <name>Hipercard</name>
+                                <order>0</order>
+                            </HIP>
+                            <RED>
+                                <code>RED</code>	
+                                <name>RedCompra</name>
+                                <order>0</order>
+                            </RED>
+                            <JCB>
+                                <code>JCB</code>	
+                                <name>JCB</name>
+                                <order>0</order>
+                            </JCB>
+                            <FAV>
+                                <code>FAV</code>	
+                                <name>Favacard</name>
+                                <order>0</order>
+                            </FAV>
+                            <COL>
+                                <code>COL</code>	
+                                <name>Credencial COL</name>
+                                <order>0</order>
+                            </COL>
+                            <LID>
+                                <code>LID</code>	
+                                <name>Lider</name>
+                                <order>0</order>
+                            </LID>
+                            <COOP>
+                                <code>COOP</code>	
+                                <name>Coopeplus</name>
+                                <order>0</order>
+                            </COOP>
+                            <CRED>
+                                <code>CRED</code>	
+                                <name>Credimas</name>
+                                <order>0</order>
+                            </CRED>
+                            <NEX>
+                                <code>NEX</code>	
+                                <name>Nexo</name>
+                                <order>0</order>
+                            </NEX>
+                            <MAS>
+                                <code>MAS</code>	
+                                <name>Mas (Cencosud)</name>
+                                <order>0</order>
+                            </MAS>
+                        </types>
+                    </cc>
+                </payment>    
+                
+		<resources>
+			<sub1_installment_setup>
+				<setup>
+					<module>Sub1_Installment</module>
+					<class>Sub1_Installment_Model_Resource_Setup</class>
+				</setup>
+			</sub1_installment_setup>
+		</resources>
+		<blocks>
+			<installment>
+				<class>Sub1_Installment_Block</class>
+			</installment>
+		</blocks>
+		<helpers>
+			<installment>
+				<class>Sub1_Installment_Helper</class>
+			</installment>
+		</helpers>
+		<models>
+			<installment>
+				<class>Sub1_Installment_Model</class>
+				<resourceModel>installment_resource</resourceModel>
+			</installment>
+			<installment_resource>
+				<class>Sub1_Installment_Model_Resource</class>
+				<entities>
+					<installment>
+						<table>installment_installment</table>
+					</installment>
+					<installment_store>
+						<table>installment_installment_store</table>
+					</installment_store>
+				</entities>
+			</installment_resource>
+		</models>
+	</global>
+	<adminhtml>
+		<layout>
+			<updates>
+				<sub1_installment>
+					<file>sub1_installment.xml</file>
+				</sub1_installment>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Sub1_Installment>
+					<files>
+						<default>Sub1_Installment.csv</default>
+					</files>
+				</Sub1_Installment>
+			</modules>
+		</translate>
+	</adminhtml>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Sub1_Installment before="Mage_Adminhtml">Sub1_Installment_Adminhtml</Sub1_Installment>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<default>
+		<installment>
+		</installment>
+	</default>
+</config>

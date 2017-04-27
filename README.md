@@ -42,15 +42,12 @@ Currency ==> ARS
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/7.png)  
 
 ## Consideraciones Finales  
-
 Si no se realizo durante la instalacion, hay que verificar / Configurar las opciones de Pais y Moneda  
 System ==> Configuration ==> General  
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/8.png)  
-
 Configurar las opciones de Pais  
 System ==> Configuration ==> Currency Setup  
 Configurar las opciones de moneda dentro de la ocpion Currency Options  
-
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/9.png)  
 [Folder](https://developers.nps.com.ar/images/images/screenshot_plugins/magento_1.7_1.9/10.png)  
 

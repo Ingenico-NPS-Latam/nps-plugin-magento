@@ -7,6 +7,7 @@
 3. Erase all cache  
   system ==> Cache Management  
 ![2_cache_mangement](https://cloud.githubusercontent.com/assets/24914148/25488624/df814fb2-2b3d-11e7-86be-8e644490fe51.png)
+
 ![3](https://cloud.githubusercontent.com/assets/24914148/25488626/df84dfce-2b3d-11e7-8779-7ee35da1d904.png)
   ==> Flush Magento Cache  
   ==> Flush Cache Storage    
@@ -18,7 +19,9 @@
 
 4. Configure your new NPS payment method ==> System ==> Configuration ==>  Payment Methods:  
 Completar con la informacion del Comercio:  
+
 ![5](https://cloud.githubusercontent.com/assets/24914148/25488627/df84ef82-2b3d-11e7-94e8-e35a4be558f2.png)  
+
 Enable ==> Yes   ||  No  
 New order status  ==> Processing  
 Payment Action ==> Autorize  || Authorize and Capture  

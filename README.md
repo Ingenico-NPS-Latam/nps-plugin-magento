@@ -6,19 +6,19 @@
 ![1](https://cloud.githubusercontent.com/assets/24914148/25488577/c34daeda-2b3d-11e7-8c21-ba08d45ba890.png)
 3. Erase all cache  
   system ==> Cache Management  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/2.png)  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/3.png)  
+![2_cache_mangement](https://cloud.githubusercontent.com/assets/24914148/25488624/df814fb2-2b3d-11e7-86be-8e644490fe51.png)
+![3](https://cloud.githubusercontent.com/assets/24914148/25488626/df84dfce-2b3d-11e7-8779-7ee35da1d904.png)
   ==> Flush Magento Cache  
   ==> Flush Cache Storage    
   ==> Flush Catalog and Images Cache  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/4.png)  
+![4](https://cloud.githubusercontent.com/assets/24914148/25488625/df848b1e-2b3d-11e7-85c0-86e7b25f780f.png) 
   ==> Flush Javascript/css Cache  
 
 *Con esto se agrega la Opcion NPS al menu de Magento  
 
 4. Configure your new NPS payment method ==> System ==> Configuration ==>  Payment Methods:  
 Completar con la informacion del Comercio:  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/5.png)  
+![5](https://cloud.githubusercontent.com/assets/24914148/25488627/df84ef82-2b3d-11e7-94e8-e35a4be558f2.png)  
 Enable ==> Yes   ||  No  
 New order status  ==> Processing  
 Payment Action ==> Autorize  || Authorize and Capture  
@@ -32,24 +32,24 @@ Payment from Applicable Countries ==> All Allowed Countries  || Specific Countri
 Payment from Specific Countries ==> Elegir los paises en los que se quiere operar  
 
 5. Configure installment settings to allow payments ==> Clicke en NPS del Menu Principal ==> Installments ==> Add Installments  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/6.png)  
+![6](https://cloud.githubusercontent.com/assets/24914148/25488628/df89e1fe-2b3d-11e7-8613-f1ad2486e7b5.png)  
 cc_type ==> Marca de la Tarjeta  
 qty ==> Cantidad de Cuotas  
 rate ==> Interes  
 Status ==> Enable   ||   Disable  
 Country ==> AR  
 Currency ==> ARS  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/7.png)  
+![7](https://cloud.githubusercontent.com/assets/24914148/25488629/dfceaa0a-2b3d-11e7-888e-ffc6130891dc.png) 
 
 ## Consideraciones Finales
 Si no se realizo durante la instalacion, hay que verificar / Configurar las opciones de Pais y Moneda  
   System ==> Configuration ==> General  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/8.png)  
+![8](https://cloud.githubusercontent.com/assets/24914148/25488630/dfe32c64-2b3d-11e7-9132-23dcf6b1ed2d.png)
 Configurar las opciones de Pais  
   System ==> Configuration ==> Currency Setup  
 Configurar las opciones de moneda dentro de la ocpion Currency Options  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/9.png)  
-[Folder](https://developers.nps.com.ar/images/screenshot_plugins/magento_1.7_1.9/10.png)  
+![9](https://cloud.githubusercontent.com/assets/24914148/25488631/dfecbc02-2b3d-11e7-9480-6b28a992910d.png)
+![10](https://cloud.githubusercontent.com/assets/24914148/25488632/e0400ab0-2b3d-11e7-8a80-74feba06f70e.png)  
 
 
 

@@ -1,7 +1,7 @@
 # Magento Plugin
 
-## Availability
-Supported and tested in 1.7.x.x to 1.9.x.x Magento versions
+## Disponibilidad
+Probado y soportado por las versiones 1.7.x.x to 1.9.x.x de Magento
 
 ## Pasos para la instalacion
 1. Clonar el proyecto.

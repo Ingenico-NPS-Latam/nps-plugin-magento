@@ -1,6 +1,6 @@
 # Magento Plugin
 
-*Read this in other languages: [English](README.md), [Español](README.sp.md),
+*Read this in other languages: [English](README.md), [Español](README.es.md),
 
 ## Availability
 Supported & Tested in Magento versions 1.7.x.x to 1.9.x.x

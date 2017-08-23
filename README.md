@@ -1,6 +1,6 @@
 # Magento Plugin
 
-*Read this in other languages: [English](README.md), [Español](README.es.md)
+*Read this in other languages: [English](README.md), [Español](README.es.md)*
 
 ## Availability
 Supported & Tested in Magento versions 1.7.x.x to 1.9.x.x
@@ -26,7 +26,7 @@ Supported & Tested in Magento versions 1.7.x.x to 1.9.x.x
 
   ==> Flush Javascript/css Cache  
 
-  *By doing this, NPS option is added to Magento menu
+  *By doing this, NPS option is added to Magento menu*
 
 4. Configure your new NPS payment method ==> System ==> Configuration ==>  Payment Methods:  
   Complete with Merchant data:  
@@ -93,7 +93,7 @@ The next step is to create the actual stores in Magento. Lets say we want to add
 6. Click **Save Category**
 
 ## Store configuration
-Before we start configuring our stores, lets pause for a minute and explain the concepts of Websites, Stores, and Store Views in Magento. Websites are the top-most entity in Magento. If you want completely separate sites that do not share cart, shipping methods, etc., you should create separate Websites. Each Website has at least one Store, and each Store has at least one Store View. Multiple Stores can share cart, user sessions, payment gateways, etc., but have their own catalog structure. Finally, a Store is a collection of Store Views. Store Views change the way pages are presented, normally used to offer a site in different layouts or languages. These concepts can be a bit confusing at first and I recommend this webinar which explains the Magento multi-store retailing in detail.
+Before we start configuring our stores, lets pause for a minute and explain the concepts of Websites, Stores, and Store Views in Magento. Websites are the top-most entity in Magento. If you want completely separate sites that do not share cart, shipping methods, etc., you should create separate Websites. Each Website has at least one Store, and each Store has at least one Store View. Multiple Stores can share cart, user sessions, payment gateways, etc., but have their own catalog structure. Finally, a Store is a collection of Store Views. Store Views change the way pages are presented, normally used to offer a site in different layouts or languages. 
 
 1. Go to **System > Manage Stores**
 2. Click **Create Website** and enter the following information:

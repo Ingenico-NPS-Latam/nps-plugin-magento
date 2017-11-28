@@ -194,6 +194,205 @@
                                 <name>Mas (Cencosud)</name>
                                 <order>0</order>
                             </MAS>
+                            
+                            
+                            
+<_128>                            
+<code>128</code><name>Comfama</name><order>0</order>
+</_128>
+<_127>
+<code>127</code><name>WebPay</name><order>0</order>
+</_127>
+<_126>
+<code>126</code><name>Credz</name><order>0</order>
+</_126>
+<_125>
+<code>125</code><name>UATP</name><order>0</order>
+</_125>
+<_124>
+<code>124</code><name>Socios BBVA</name><order>0</order>
+</_124>
+<_123>
+<code>123</code><name>Codensa</name><order>0</order>
+</_123>
+<_122>
+<code>122</code><name>Qida</name><order>0</order>
+</_122>
+<_121>
+<code>121</code><name>CTC Group</name><order>0</order>
+</_121>
+<_120>
+<code>120</code><name>Club Dia</name><order>0</order>
+</_120>
+<_119>
+<code>119</code><name>Tuya</name><order>0</order>
+</_119>
+<_118>
+<code>118</code><name>Grupar</name><order>0</order>
+</_118>
+<_117>
+<code>117</code><name>Carrefour</name><order>0</order>
+</_117>
+<_116>
+<code>116</code><name>Hiper</name><order>0</order>
+</_116>
+<_115>
+<code>115</code><name>UnionPay</name><order>0</order>
+</_115>
+<_114>
+<code>114</code><name>Metro</name><order>0</order>
+</_114>
+<_113>
+<code>113</code><name>OH!</name><order>0</order>
+</_113>
+<_112>
+<code>112</code><name>Ripley</name><order>0</order>
+</_112>
+<_110>
+<code>110</code><name>BBPS</name><order>0</order>
+</_110>
+<_108>
+<code>108</code><name>SuperCard</name><order>0</order>
+</_108>
+<!--_107>
+<code>107</code><name>RedCompra</name><order>0</order>
+</_107-->
+<!--_106>
+<code>106</code><name>Credencial COL</name><order>0</order>
+</_106-->
+<!--_105>
+<code>105</code><name>Hipercard</name><order>0</order>
+</_105-->
+<!--_104>
+<code>104</code><name>Aura</name><order>0</order>
+</_104-->
+<!--_103>
+<code>103</code><name>Magna</name><order>0</order>
+</_103-->
+<!--_102>
+<code>102</code><name>Elo</name><order>0</order>
+</_102-->
+<!--_101>
+<code>101</code><name>Discover</name><order>0</order>
+</_101-->
+<!--_95>
+<code>95</code><name>Coopeplus</name><order>0</order>
+</_95-->
+<_91>
+<code>91</code><name>Credi Guia</name><order>0</order>
+</_91>
+<!--_72>
+<code>72</code><name>Consumax</name><order>0</order>
+</_72-->
+<_66>
+<code>66</code><name>Maestro</name><order>0</order>
+</_66>
+<!--_65>
+<code>65</code><name>Argencard</name><order>0</order>
+</_65-->
+<!--_63>
+<code>63</code><name>NATIVA</name><order>0</order>
+</_63-->
+<!--_61>
+<code>61</code><name>Nexo</name><order>0</order>
+</_61-->
+<_58>
+<code>58</code><name>Club La Voz</name><order>0</order>
+</_58>
+<!--_57>
+<code>57</code><name>MC Bancor</name><order>0</order>
+</_57-->
+<_55>
+<code>55</code><name>Visa Debito</name><order>0</order>
+</_55>
+<_53>
+<code>53</code><name>Argenta</name><order>0</order>
+</_53>
+<_52>
+<code>52</code><name>Club Speedy</name><order>0</order>
+</_52>
+<_51>
+<code>51</code><name>Clarin 365</name><order>0</order>
+</_51>
+<!--_50>
+<code>50</code><name>Pyme Nacion</name><order>0</order>
+</_50-->
+<!--_49>
+<code>49</code><name>Naranja MO</name><order>0</order>
+</_49-->
+<!--_48>
+<code>48</code><name>Mas (Cencosud)</name><order>0</order>
+</_48-->
+<_47>
+<code>47</code><name>Club Arnet</name><order>0</order>
+</_47>
+<_46>
+<code>46</code><name>Club Personal</name><order>0</order>
+</_46>
+<_45>
+<code>45</code><name>Club La Nacion</name><order>0</order>
+</_45>
+<!--_43>
+<code>43</code><name>Italcred</name><order>0</order>
+</_43-->
+<_42>
+<code>42</code><name>Tarjeta Shopping</name><order>0</order>
+</_42>
+<!--_38>
+<code>38</code><name>Nativa MC</name><order>0</order>
+</_38-->
+<_35>
+<code>35</code><name>CMR Falabella</name><order>0</order>
+</_35>
+<_34>
+<code>34</code><name>Sol</name><order>0</order>
+</_34>
+<_33>
+<code>33</code><name>Patagonia 365</name><order>0</order>
+</_33>
+<!--_29>
+<code>29</code><name>Visa Naranja</name><order>0</order>
+</_29-->
+<!--_21>
+<code>21</code><name>Nevada</name><order>0</order>
+</_21-->
+<!--_20>
+<code>20</code><name>Credimas</name><order>0</order>
+</_20-->
+<!--_17>
+<code>17</code><name>Lider</name><order>0</order>
+</_17-->
+<!--_15>
+<code>15</code><name>Favacard</name><order>0</order>
+</_15-->
+<_14>
+<code>14</code><name>Visa</name><order>0</order>
+</_14>
+<!--_10>
+<code>10</code><name>Kadicard</name><order>0</order>
+</_10-->
+<!--_9>
+<code>9</code><name>Naranja</name><order>0</order>
+</_9-->
+<!--_8>
+<code>8</code><name>Cabal</name><order>0</order>
+</_8-->
+<_5>
+<code>5</code><name>Mastercard</name><order>0</order>
+</_5>
+<!--_4>
+<code>4</code><name>JCB</name><order>0</order>
+</_4-->
+<!--_2>
+<code>2</code><name>Diners</name><order>0</order>
+</_2-->
+<_1>
+<code>1</code><name>American Express</name><order>0</order>
+</_1>
+                            
+                            
+                            
+                            
                         </types>
                     </cc>
                 </payment>    

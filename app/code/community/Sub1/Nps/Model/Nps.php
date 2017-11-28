@@ -535,7 +535,16 @@ class Sub1_Nps_Model_Nps extends Mage_Payment_Model_Method_Abstract
             case 'NEX': return '61';	//Nexo
             case 'MAS': return '48';	//Mas (Cencosud)
             //case '': return '46';	//Club Personal
-            default: throw new Exception('CCType ('.$cc_type.') need to be formated to transact with psp');
+            default: 
+              if(!empty($cc_type) && (int)$cc_type>0) {
+                return (string)$cc_type;
+              }else if(!empty($cc_type) && (string)$cc_type[0] == "_" && is_numeric((string)$cc_type[1])) {
+                $trn_product = intval(substr($cc_type,1));
+                if($trn_product>0) {
+                  return (string)$trn_product;
+                }
+              }              
+              throw new Exception('CCType ('.$cc_type.') need to be formated to transact with psp');
         }
     }
 

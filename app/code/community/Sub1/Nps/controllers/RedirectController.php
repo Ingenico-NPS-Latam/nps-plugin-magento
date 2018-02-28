@@ -128,95 +128,99 @@ class Sub1_Nps_RedirectController extends Mage_Core_Controller_Front_Action
               );
             }
 
-            $matches = array();
-            $input_string = $order->getBillingAddress()->getStreet(1);
-            if(preg_match('/(?P<address>[^d]+) (?P<number>\d+.?)/', $input_string, $matches)){
-                $street = $matches['address'];
-                $number = $matches['number'];
-            } else { // no number found, it is only address
-                $street = $input_string;
-                $number = null;
+            if(is_object($order->getBillingAddress())) {
+              $matches = array();
+              $input_string = $order->getBillingAddress()->getStreet(1);
+              if(preg_match('/(?P<address>[^d]+) (?P<number>\d+.?)/', $input_string, $matches)){
+                  $street = $matches['address'];
+                  $number = $matches['number'];
+              } else { // no number found, it is only address
+                  $street = $input_string;
+                  $number = null;
+              }
+
+              if($order->getBillingAddress()->getFirstname()
+                  && ($street && $number)
+                  && $order->getBillingAddress()->getCity()
+                  && $order->getBillingAddress()->getCountryModel()->getIso3Code()
+                  && $order->getBillingAddress()->getPostcode()) {
+                $psp_parameters['psp_BillingDetails'] = array(
+                  'Person'=>array(
+                      'FirstName'=>substr($order->getBillingAddress()->getFirstname(),0,50),
+                      'LastName'=>substr($order->getBillingAddress()->getLastname(),0,30),
+                      'MiddleName'=>substr($order->getBillingAddress()->getMiddlename(),0,30),
+                      //'PhoneNumber1'=>'4123-1234', // no disponible
+                      //'PhoneNumber2'=>'4123-1234', // no disponible
+                      //'Gender'=>'M', // no disponible
+                      //'DateOfBirth'=> '1987-01-01', // no disponible
+                      //'Nationality'=>'ARG', // no disponible
+                      //'IDNumber'=>'32123123', // no disponible
+                      //'IDType'=>'1', // no disponible
+                  ),
+                  'Address'=>array(
+                      'Street'=>substr($street,0,50),
+                      'HouseNumber'=>substr($number,0,15),
+                      // 'AdditionalInfo'=>'3', // no disponible
+                      'City'=>substr($order->getBillingAddress()->getCity(),0,40),
+                      'StateProvince'=>substr($order->getBillingAddress()->getRegion(),0,40),
+                      'Country'=>substr($order->getBillingAddress()->getCountryModel()->getIso3Code(),0,3),
+                      'ZipCode'=>substr($order->getBillingAddress()->getPostcode(),0,10),
+                  ),
+                );
+
+              }
             }
 
-            if($order->getBillingAddress()->getFirstname()
-                && ($street && $number)
-                && $order->getBillingAddress()->getCity()
-                && $order->getBillingAddress()->getCountryModel()->getIso3Code()
-                && $order->getBillingAddress()->getPostcode()) {
-              $psp_parameters['psp_BillingDetails'] = array(
-                'Person'=>array(
-                    'FirstName'=>substr($order->getBillingAddress()->getFirstname(),0,50),
-                    'LastName'=>substr($order->getBillingAddress()->getLastname(),0,30),
-                    'MiddleName'=>substr($order->getBillingAddress()->getMiddlename(),0,30),
-                    //'PhoneNumber1'=>'4123-1234', // no disponible
-                    //'PhoneNumber2'=>'4123-1234', // no disponible
-                    //'Gender'=>'M', // no disponible
-                    //'DateOfBirth'=> '1987-01-01', // no disponible
-                    //'Nationality'=>'ARG', // no disponible
-                    //'IDNumber'=>'32123123', // no disponible
-                    //'IDType'=>'1', // no disponible
-                ),
-                'Address'=>array(
+            if(is_object($order->getShippingAddress())) {
+              $matches = array();
+              $input_string = $order->getShippingAddress()->getStreet(1);
+              if(preg_match('/(?P<address>[^d]+) (?P<number>\d+.?)/', $input_string, $matches)){
+                  $street = $matches['address'];
+                  $number = $matches['number'];
+              } else { // no number found, it is only address
+                  $street = $input_string;
+                  $number = null;
+              }
+
+              $shippingMethod = $order->getShippingMethod(true);
+              if($order->getShippingAddress()->getData('firstname')
+                   && ($street && $number)
+                   && $order->getShippingAddress()->getData("city")
+                   && $order->getShippingAddress()->getCountryModel()->getIso3Code()
+                   && $order->getShippingAddress()->getData("postcode") ) {
+
+                $psp_parameters['psp_ShippingDetails'] = array(
+                  // 'ShippingIDNumber'=>$order->getShipmentsCollection()->getFirstItem()->getIncrementId(), // no disponible
+                  'Method'=>substr(Mage::getModel('nps/nps')->formatShippingMethod(null),0,2), // required // ??????????
+                  'Carrier'=>substr(Mage::getModel('nps/nps')->formatShippingCarrier(null),0,3), // no disponible
+                  // 'DeliveryDate'=>(string)date('Y-m-d',strtotime($shippingMethod->getCreatedAtTimestamp())), // no disponible
+                  'FreightAmount'=> (int)$order->getShippingAmount() > 0 ? substr((string)Mage::getModel('nps/nps')->toCents($order->getShippingAmount()),0,12) : null,
+                  // 'GiftMessage'=>'4', // no disponible
+                  // 'GiftWrapping'=>'4', // no disponible
+                  'PrimaryRecipient'=>array( // required
+                    'FirstName'=>substr($order->getShippingAddress()->getData('firstname'),0,50), // required
+                    'LastName'=>substr($order->getShippingAddress()->getData('lastname'),0,30),
+                    'MiddleName'=>substr($order->getShippingAddress()->getData('middlename'),0,30),
+                    // 'PhoneNumber1'=>'4', // no disponible
+                    // 'PhoneNumber2'=>'4', // no disponible
+                    // 'Gender'=>'M', // no disponible
+                    // 'DateOfBirth'=>'1987-01-01', // no disponible
+                    // 'Nationality'=>'ARG', // no disponible
+                    // 'IDNumber'=>'4', // no disponible
+                    // 'IDType'=>'4', // no disponible
+                  ),
+                  'Address'=>array( // required
                     'Street'=>substr($street,0,50),
                     'HouseNumber'=>substr($number,0,15),
                     // 'AdditionalInfo'=>'3', // no disponible
-                    'City'=>substr($order->getBillingAddress()->getCity(),0,40),
-                    'StateProvince'=>substr($order->getBillingAddress()->getRegion(),0,40),
-                    'Country'=>substr($order->getBillingAddress()->getCountryModel()->getIso3Code(),0,3),
-                    'ZipCode'=>substr($order->getBillingAddress()->getPostcode(),0,10),
-                ),
-              );
+                    'City'=>substr($order->getShippingAddress()->getData("city"),0,40),
+                    'StateProvince'=>substr($order->getShippingAddress()->getRegion(),0,40),
+                    'Country'=>substr($order->getShippingAddress()->getCountryModel()->getIso3Code(),0,3),
+                    'ZipCode'=>substr($order->getShippingAddress()->getData("postcode"),0,10),
+                  ),
 
-            }
-
-            $matches = array();
-            $input_string = $order->getShippingAddress()->getStreet(1);
-            if(preg_match('/(?P<address>[^d]+) (?P<number>\d+.?)/', $input_string, $matches)){
-                $street = $matches['address'];
-                $number = $matches['number'];
-            } else { // no number found, it is only address
-                $street = $input_string;
-                $number = null;
-            }
-
-            $shippingMethod = $order->getShippingMethod(true);
-            if($order->getShippingAddress()->getData('firstname')
-                 && ($street && $number)
-                 && $order->getShippingAddress()->getData("city")
-                 && $order->getShippingAddress()->getCountryModel()->getIso3Code()
-                 && $order->getShippingAddress()->getData("postcode") ) {
-
-              $psp_parameters['psp_ShippingDetails'] = array(
-                // 'ShippingIDNumber'=>$order->getShipmentsCollection()->getFirstItem()->getIncrementId(), // no disponible
-                'Method'=>substr(Mage::getModel('nps/nps')->formatShippingMethod(null),0,2), // required // ??????????
-                'Carrier'=>substr(Mage::getModel('nps/nps')->formatShippingCarrier(null),0,3), // no disponible
-                // 'DeliveryDate'=>(string)date('Y-m-d',strtotime($shippingMethod->getCreatedAtTimestamp())), // no disponible
-                'FreightAmount'=> (int)$order->getShippingAmount() > 0 ? substr((string)Mage::getModel('nps/nps')->toCents($order->getShippingAmount()),0,12) : null,
-                // 'GiftMessage'=>'4', // no disponible
-                // 'GiftWrapping'=>'4', // no disponible
-                'PrimaryRecipient'=>array( // required
-                  'FirstName'=>substr($order->getShippingAddress()->getData('firstname'),0,50), // required
-                  'LastName'=>substr($order->getShippingAddress()->getData('lastname'),0,30),
-                  'MiddleName'=>substr($order->getShippingAddress()->getData('middlename'),0,30),
-                  // 'PhoneNumber1'=>'4', // no disponible
-                  // 'PhoneNumber2'=>'4', // no disponible
-                  // 'Gender'=>'M', // no disponible
-                  // 'DateOfBirth'=>'1987-01-01', // no disponible
-                  // 'Nationality'=>'ARG', // no disponible
-                  // 'IDNumber'=>'4', // no disponible
-                  // 'IDType'=>'4', // no disponible
-                ),
-                'Address'=>array( // required
-                  'Street'=>substr($street,0,50),
-                  'HouseNumber'=>substr($number,0,15),
-                  // 'AdditionalInfo'=>'3', // no disponible
-                  'City'=>substr($order->getShippingAddress()->getData("city"),0,40),
-                  'StateProvince'=>substr($order->getShippingAddress()->getRegion(),0,40),
-                  'Country'=>substr($order->getShippingAddress()->getCountryModel()->getIso3Code(),0,3),
-                  'ZipCode'=>substr($order->getShippingAddress()->getData("postcode"),0,10),
-                ),
-
-              );
+                );
+              }
             }
 
             foreach($order->getAllVisibleItems() as $item) {

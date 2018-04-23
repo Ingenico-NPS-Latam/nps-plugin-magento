@@ -451,9 +451,10 @@ class Sub1_Nps_RedirectController extends Mage_Core_Controller_Front_Action
          * se filtra por product(cc_type)+country+currency
          */
         $table = Mage::getSingleton('core/resource')->getTableName('installment/installment');
+        $table2 = Mage::getSingleton('core/resource')->getTableName('installment/installment_store');
         $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
         $query = 'SELECT ii.* FROM '.$table.' ii
-            INNER JOIN installment_installment_store iis ON ii.entity_id = iis.installment_id
+            INNER JOIN '.$table2.' iis ON ii.entity_id = iis.installment_id
             WHERE ii.cc_type = \''.$cc_type.'\'
             AND ii.country = \''.$country.'\' AND ii.currency = \''.$currency.'\'
             AND iis.store_id = '.Mage::app()->getStore()->getId().'

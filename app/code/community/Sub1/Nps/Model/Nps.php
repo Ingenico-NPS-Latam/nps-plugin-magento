@@ -247,9 +247,10 @@ class Sub1_Nps_Model_Nps extends Mage_Payment_Model_Method_Abstract
              * obtengo las cuotas por producto y cantidad
              */
             $table = Mage::getSingleton('core/resource')->getTableName('installment/installment');
+            $table2 = Mage::getSingleton('core/resource')->getTableName('installment/installment_store');
             $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
             $query = 'SELECT ii.rate FROM '.$table.' ii
-                INNER JOIN installment_installment_store iis ON ii.entity_id = iis.installment_id
+                INNER JOIN '.$table2.' iis ON ii.entity_id = iis.installment_id
                 WHERE ii.cc_type = \''.$cc_type.'\' AND ii.qty = \''.$installment.'\'
                     AND iis.store_id = '.Mage::app()->getStore()->getId().'
                     LIMIT 1';

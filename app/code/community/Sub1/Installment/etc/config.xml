@@ -284,9 +284,9 @@
 <!--_72>
 <code>72</code><name>Consumax</name><order>0</order>
 </_72-->
-<_66>
+<!--_66>
 <code>66</code><name>Maestro</name><order>0</order>
-</_66>
+</_66-->
 <!--_65>
 <code>65</code><name>Argencard</name><order>0</order>
 </_65-->
@@ -335,9 +335,9 @@
 <!--_43>
 <code>43</code><name>Italcred</name><order>0</order>
 </_43-->
-<_42>
+<!--_42>
 <code>42</code><name>Tarjeta Shopping</name><order>0</order>
-</_42>
+</_42-->
 <!--_38>
 <code>38</code><name>Nativa MC</name><order>0</order>
 </_38-->
@@ -365,9 +365,9 @@
 <!--_15>
 <code>15</code><name>Favacard</name><order>0</order>
 </_15-->
-<_14>
+<!--_14>
 <code>14</code><name>Visa</name><order>0</order>
-</_14>
+</_14-->
 <!--_10>
 <code>10</code><name>Kadicard</name><order>0</order>
 </_10-->
@@ -377,18 +377,18 @@
 <!--_8>
 <code>8</code><name>Cabal</name><order>0</order>
 </_8-->
-<_5>
+<!--_5>
 <code>5</code><name>Mastercard</name><order>0</order>
-</_5>
+</_5-->
 <!--_4>
 <code>4</code><name>JCB</name><order>0</order>
 </_4-->
 <!--_2>
 <code>2</code><name>Diners</name><order>0</order>
 </_2-->
-<_1>
+<!--_1>
 <code>1</code><name>American Express</name><order>0</order>
-</_1>
+</_1-->
                             
                             
                             

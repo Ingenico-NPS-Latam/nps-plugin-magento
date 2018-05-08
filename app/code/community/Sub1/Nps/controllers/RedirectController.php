@@ -116,7 +116,7 @@ class Sub1_Nps_RedirectController extends Mage_Core_Controller_Front_Action
               $psp_parameters['psp_CustomerAdditionalDetails'] = array(
                 'EmailAddress'=>$order->getCustomerEmail() ? substr($order->getCustomerEmail(),0,255) : 'nomail@magento.com',
                 //'AlternativeEmailAddress'=>'2', // aparentemente no disponible
-                'IPAddress'=>substr((string)$_SERVER['REMOTE_ADDR'],0,45),
+                'IPAddress'=>substr($this->getIp(),0,45),
                 'AccountID'=>substr($order->getCustomerId(),0,128),
                 'AccountCreatedAt'=>date('Y-m-d',strtotime($customer->getData('created_at'))),
                 'AccountPreviousActivity'=>$AccountPreviousActivity,
@@ -267,7 +267,15 @@ class Sub1_Nps_RedirectController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
-
+    public function getIp() {
+      $ip = $_SERVER['REMOTE_ADDR'];
+      if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+      }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+      }
+      return strlen($ip) >= 7 ? $ip : null;
+    }  
 
     public function directLinkTransactionReformat($response) {
       foreach($response as $indexA => $valueA) {

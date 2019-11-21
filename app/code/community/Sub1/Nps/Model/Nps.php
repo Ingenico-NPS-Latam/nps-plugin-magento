@@ -498,45 +498,81 @@ class Sub1_Nps_Model_Nps extends Mage_Payment_Model_Method_Abstract
 
     public function formatCCTypeToPspProductId($cc_type) {
         switch($cc_type) {
-            case 'MCB': return '57';	//MC Bancor
-            case 'TSHOP': return '42';	//T Shopping
-            case 'TN': return '9';	//Naranja
-            case 'ITAL': return '43';	//Italcred
-            case 'NMO': return '49';	//Naranja MO
-            case 'ARGE': return '65';	//Argencard
             case 'AE': return '1';	//American Express
             case 'DI': return '2';	//Diners
+            case 'JCB': return '4';	//JCB
             case 'MC': return '5';	//Mastercard
-            case 'VI': return '14';	//Visa
             case 'CAB': return '8';	//Cabal
-            case 'CON': return '72';	//Consumax
-            case 'NAT': return '63';	//NATIVA
+            case 'TN': return '9';	//Naranja
             case 'KAD': return '10';	//Kadicard
+            case 'VI': return '14';	//Visa
+            case 'FAV': return '15';	//Favacard
+            case 'LID': return '17';	//Lider
+            case 'CRED': return '20';	//Credimas
             case 'NEV': return '21';	//Nevada
             case 'VIN': return '29';	//Visa Naranja
+            case 'P365': return '33';	//Patagonia 365
+            case 'SL': return '34';	//Sol
+            case 'FAL': return '35';	//CMR Falabella
             case 'NATMC': return '38';	//Nativa MC
+            case 'TSHOP': return '42';	//T Shopping
+            case 'ITAL': return '43';	//Italcred
+            case 'NAC': return '45';	//Club La Nacion
+            case 'PER': return '46';	//Club Personal
+            case 'ARN': return '47';	//Club Arnet
+            case 'MAS': return '48';	//Mas (Cencosud)
+            case 'NMO': return '49';	//Naranja MO
             case 'PYN': return '50';	//Pyme Nacion
+            case 'CLA': return '51';	//Clarin 365
+            case 'SPE': return '52';	//Club Speedy
+            case 'AR': return '53';	//Argenta
+            case 'VID': return '55';	//Visa Debito
+            case 'MCB': return '57';	//MC Bancor
+            case 'CLV': return '58';	//Club La Voz
+            case 'NEX': return '61';	//Nexo
+            case 'NAT': return '63';	//NATIVA
+            case 'ARGE': return '65';	//Argencard
+            case 'MA': return '66';	//Maestro
+            case 'CE': return '69';	//Cetelem
+            case 'CON': return '72';	//Consumax
+            case 'MI': return '75';	//Mira
+            case 'CG': return '91';	//Credi Guia
+            case 'SU': return '93';	//Sucredito
+            case 'COOP': return '95';	//Coopeplus
             case 'DIS': return '101';	//Discover
             case 'EL': return '102';	//Elo
             case 'MAG': return '103';	//Magna
             case 'AU': return '104';	//Aura
             case 'HIP': return '105';	//Hipercard
+            // case 'COL': return '106';	//Credencial COL
             case 'RED': return '107';	//RedCompra
-            case 'JCB': return '4';	//JCB
-            case 'FAV': return '15';	//Favacard
-            // case '': return '58';	//Club La Voz
-            case 'COL': return '106';	//Credencial COL
-            case 'LID': return '17';	//Lider
-            // case '': return '45';	//Club La Nacion
-            case 'COOP': return '95';	//Coopeplus
-            case 'CRED': return '20';	//Credimas
-            // case '': return '47';	//Club Arnet
-            //case '': return '52';	//Club Speedy
-            //case '': return '51';	//Clarin 365
-            case 'NEX': return '61';	//Nexo
-            case 'MAS': return '48';	//Mas (Cencosud)
-            //case '': return '46';	//Club Personal
-            default: 
+            case 'SC': return '108';	//SuperCard
+            case 'BB': return '110';	//BBPS
+            case 'RI': return '112';	//Ripley
+            case 'OH': return '113';	//OH!
+            case 'ME': return '114';	//Metro
+            case 'UP': return '115';	//UnionPay
+            case 'HI': return '116';	//Hiper
+            case 'CF': return '117';	//Carrefour
+            case 'GR': return '118';	//Grupar
+            case 'TU': return '119';	//Tuya
+            case 'CD': return '120';	//Club Dia
+            case 'CTC': return '121';	//CTC Group
+            case 'QI': return '122';	//Qida
+            case 'COD': return '123';	//Codensa
+            case 'SBB': return '124';	//Socios BBVA
+            case 'UA': return '125';	//UATP
+            case 'CR': return '126';	//Credz
+            case 'WP': return '127';	//WebPay
+            case 'COM': return '128';	//Comfama
+            case 'CSU': return '129';	//Colsubsidio
+            case 'CA': return '130';	//Carnet
+            case 'CAD': return '131';	//Carnet Debit
+            case 'ULT': return '132';	//Ultra
+            case 'ELE': return '133';	//Elebar
+            case 'CAA': return '134';	//Carta Automatica
+
+          default:
               if(!empty($cc_type) && (int)$cc_type>0) {
                 return (string)$cc_type;
               }else if(!empty($cc_type) && (string)$cc_type[0] == "_" && is_numeric((string)$cc_type[1])) {
